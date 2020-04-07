@@ -12,6 +12,8 @@ if [ ! -d "app" ]; then
 fi
 
 cd app
+pwd
+
 ionic cordova plugin add cordova-plugin-app-version cordova-sqlite-storage
 
 # git add/commit
