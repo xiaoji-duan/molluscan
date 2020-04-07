@@ -48,6 +48,7 @@ install:
   - if [[ "$TRAVIS_JOB_NAME" == "build" ]]; then sh $TRAVIS_BUILD_DIR/.travis/build-install.sh ; fi
 before_script:
   - export SSHPASS=$ALIYUN_PASS
+  - if [[ "$TRAVIS_JOB_NAME" == "generate" ]]; then sh $TRAVIS_BUILD_DIR/.travis/generate-before_script.sh ; fi
 script:
   - if [[ "$TRAVIS_JOB_NAME" == "generate" ]]; then sh $TRAVIS_BUILD_DIR/.travis/generate-script.sh ; fi
   - if [[ "$TRAVIS_JOB_NAME" == "build" ]]; then sh $TRAVIS_BUILD_DIR/.travis/build-script.sh ; fi
