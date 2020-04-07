@@ -44,16 +44,16 @@ matrix:
     cache:
       npm: false
 install:
-  - if [[ "$TRAVIS_OS_NAME" == "generate" ]]; then sh $TRAVIS_BUILD_DIR/.travis/generate-install.sh ; fi
-  - if [[ "$TRAVIS_OS_NAME" == "build" ]]; then sh $TRAVIS_BUILD_DIR/.travis/build-install.sh ; fi
+  - if [[ "$TRAVIS_JOB_NAME" == "generate" ]]; then sh $TRAVIS_BUILD_DIR/.travis/generate-install.sh ; fi
+  - if [[ "$TRAVIS_JOB_NAME" == "build" ]]; then sh $TRAVIS_BUILD_DIR/.travis/build-install.sh ; fi
 before_script:
   - export SSHPASS=$ALIYUN_PASS
 script:
-  - if [[ "$TRAVIS_OS_NAME" == "generate" ]]; then sh $TRAVIS_BUILD_DIR/.travis/generate-script.sh ; fi
-  - if [[ "$TRAVIS_OS_NAME" == "build" ]]; then sh $TRAVIS_BUILD_DIR/.travis/build-script.sh ; fi
+  - if [[ "$TRAVIS_JOB_NAME" == "generate" ]]; then sh $TRAVIS_BUILD_DIR/.travis/generate-script.sh ; fi
+  - if [[ "$TRAVIS_JOB_NAME" == "build" ]]; then sh $TRAVIS_BUILD_DIR/.travis/build-script.sh ; fi
 after_script:
-  - if [[ "$TRAVIS_OS_NAME" == "generate" ]]; then sh $TRAVIS_BUILD_DIR/.travis/generate-after_script.sh ; fi
-  - if [[ "$TRAVIS_OS_NAME" == "build" ]]; then sh $TRAVIS_BUILD_DIR/.travis/build-after_script.sh ; fi
+  - if [[ "$TRAVIS_JOB_NAME" == "generate" ]]; then sh $TRAVIS_BUILD_DIR/.travis/generate-after_script.sh ; fi
+  - if [[ "$TRAVIS_JOB_NAME" == "build" ]]; then sh $TRAVIS_BUILD_DIR/.travis/build-after_script.sh ; fi
 env:
   global:
   - LANG=zh_CN.UTF-8
