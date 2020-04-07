@@ -11,7 +11,7 @@ if [ ! -d "app" ]; then
   export UPDATED_FLAG
 fi
 
-if [ "$UPDATED_FLAG" = "not updated" ]; then
+if [ "${UPDATED_FLAG}" = "not updated" ]; then
   cd app
   pwd
 
