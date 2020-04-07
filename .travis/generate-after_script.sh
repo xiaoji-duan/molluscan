@@ -1,5 +1,7 @@
 #!/bin/bash -v
 
+echo $UPDATED_FLAG
+
 if [ "${UPDATED_FLAG}" = "updated" ]; then
   # git push
   # 提交 Github Pages
