@@ -1,6 +1,6 @@
 #!/bin/bash -v
 
-export UPDATED_FLAG="not updated"
+export UPDATED_FLAG=not updated
 
 if [ ! -d "app" ]; then
   ionic start --appname molluscan --id com.xiaoji.molluscan app blank --capacitor
@@ -9,19 +9,21 @@ if [ ! -d "app" ]; then
   git add app
   git commit -m "initial app commit"
 
-  export UPDATED_FLAG="updated"
+  export UPDATED_FLAG=updated
 fi
 
-cd app
-pwd
+if [[ "$UPDATED_FLAG" == "not updated" ]]; then
+  cd app
+  pwd
 
-ionic cordova plugin add cordova-plugin-app-version cordova-sqlite-storage
+  ionic integrations enable capacitor
 
-# git add/commit
-git add .
-git commit -m "update cordova plugin"
+  # git add/commit
+  git add .
+  git commit -m "integrations enable capacitor"
 
-export UPDATED_FLAG="updated"
+  export UPDATED_FLAG=updated
+fi
 
 echo display molluscan files
 
