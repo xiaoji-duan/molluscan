@@ -1,7 +1,5 @@
 #!/bin/bash -v
 
-export UPDATED_FLAG=not updated
-
 if [ ! -d "app" ]; then
   ionic start --appname molluscan --id com.xiaoji.molluscan app blank --capacitor
 
@@ -9,10 +7,11 @@ if [ ! -d "app" ]; then
   git add app
   git commit -m "initial app commit"
 
-  export UPDATED_FLAG=updated
+  UPDATED_FLAG=updated
+  export UPDATED_FLAG
 fi
 
-if [ "$UPDATED_FLAG" == "not updated" ]; then
+if [ "$UPDATED_FLAG" = "not updated" ]; then
   cd app
   pwd
 
@@ -22,7 +21,8 @@ if [ "$UPDATED_FLAG" == "not updated" ]; then
   git add .
   git commit -m "integrations enable capacitor"
 
-  export UPDATED_FLAG=updated
+  UPDATED_FLAG=updated
+  export UPDATED_FLAG
 fi
 
 echo display molluscan files
