@@ -1,6 +1,7 @@
 #!/bin/bash -v
 
-echo ionic start
 ionic start --appname molluscan --id com.xiaoji.molluscan app blank
 
-ls -la
+echo display molluscan files
+
+ls -la app
