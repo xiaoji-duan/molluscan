@@ -1,0 +1,59 @@
+branches:
+  only:
+  - master
+matrix:
+  include:
+  - os: linux
+    sudo: true
+    name: generate
+    language: node_js
+    dist: xenial
+    node_js:
+      - 11
+    addons:
+      apt:
+        update: true
+        sources:
+        - sourceline: deb https://dl.yarnpkg.com/debian/ stable main
+          key_url: https://dl.yarnpkg.com/debian/pubkey.gpg
+        - sourceline: deb https://dl.google.com/linux/deb/ stable main
+          key_url: https://dl.google.com/linux/linux_signing_key.pub
+        packages:
+          - yarn
+          - sshpass
+    cache:
+      npm: false
+  - os: linux
+    sudo: true
+    name: build
+    language: node_js
+    dist: xenial
+    node_js:
+      - 11
+    addons:
+      apt:
+        update: true
+        sources:
+        - sourceline: deb https://dl.yarnpkg.com/debian/ stable main
+          key_url: https://dl.yarnpkg.com/debian/pubkey.gpg
+        - sourceline: deb https://dl.google.com/linux/deb/ stable main
+          key_url: https://dl.google.com/linux/linux_signing_key.pub
+        packages:
+          - yarn
+          - sshpass
+    cache:
+      npm: false
+install:
+  - if [[ "$TRAVIS_OS_NAME" == "generate" ]]; then sh $TRAVIS_BUILD_DIR/.travis/generate-install.sh ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "build" ]]; then sh $TRAVIS_BUILD_DIR/.travis/build-install.sh ; fi
+before_script:
+  - export SSHPASS=$ALIYUN_PASS
+script:
+  - if [[ "$TRAVIS_OS_NAME" == "generate" ]]; then sh $TRAVIS_BUILD_DIR/.travis/generate-script.sh ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "build" ]]; then sh $TRAVIS_BUILD_DIR/.travis/build-script.sh ; fi
+after_script:
+  - if [[ "$TRAVIS_OS_NAME" == "generate" ]]; then sh $TRAVIS_BUILD_DIR/.travis/generate-after_script.sh ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "build" ]]; then sh $TRAVIS_BUILD_DIR/.travis/build-after_script.sh ; fi
+env:
+  global:
+  - LANG=zh_CN.UTF-8
