@@ -3,7 +3,7 @@
 export UPDATED_FLAG="not updated"
 
 if [ ! -d "app" ]; then
-  ionic start --appname molluscan --id com.xiaoji.molluscan app blank
+  ionic start --appname molluscan --id com.xiaoji.molluscan app blank --capacitor
 
   export UPDATED_FLAG="updated"
   # git add/commit
