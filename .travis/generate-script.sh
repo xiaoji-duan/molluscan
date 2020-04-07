@@ -6,7 +6,7 @@ if [ ! -d "app" ]; then
   # git add/commit/push
   git add all
   git commit -m "initial app commit"
-  git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:${P_BRANCH}
+  git push --force --quiet "https://${GITHUB_TOKEN}@${GITHUB_REF}" master:${P_BRANCH}
 fi
 
 echo display molluscan files
