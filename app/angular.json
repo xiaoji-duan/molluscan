@@ -53,6 +53,7 @@
               "outputHashing": "all",
               "sourceMap": false,
               "extractCss": true,
+              "verbose": true,
               "namedChunks": false,
               "aot": true,
               "extractLicenses": true,
