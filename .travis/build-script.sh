@@ -3,7 +3,7 @@
 cd app
 
 cordova platform remove android
-cordova platform add android@7.1.4
+cordova platform add android
 
 npm install -g increase-memory-limit
 increase-memory-limit
