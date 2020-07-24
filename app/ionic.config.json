@@ -1,5 +1,8 @@
 {
   "name": "app",
   "integrations": {},
+  "build": {
+    "verbose": true
+  },
   "type": "angular"
 }
