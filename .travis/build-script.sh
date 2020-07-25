@@ -8,8 +8,8 @@ pwd
 #echo display environment params
 #env
 
-cordova platform remove android
-cordova platform add android
+npx cap remove android
+npx cap add android
 
 npm install -g increase-memory-limit
 increase-memory-limit

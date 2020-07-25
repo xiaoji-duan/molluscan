@@ -18,6 +18,7 @@ if [ "${UPDATED_FLAG}" = "not updated" ]; then
   pwd
 
   ionic integrations enable capacitor
+  npx cap init "ChuanYin" "com.xiaoji.molluscan"
 
   # git add/commit
   git add .
