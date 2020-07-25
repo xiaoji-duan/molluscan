@@ -7,8 +7,7 @@ if [ ! -d "app" ]; then
   git add app
   git commit -m "initial app commit"
 
-  UPDATED_FLAG=updated
-  export UPDATED_FLAG
+  export UPDATED_FLAG=updated
 fi
 
 echo $UPDATED_FLAG
@@ -24,8 +23,7 @@ if [ "${UPDATED_FLAG}" = "not updated" ]; then
   git add .
   git commit -m "integrations enable capacitor"
 
-  UPDATED_FLAG=updated
-  export UPDATED_FLAG
+  export UPDATED_FLAG=updated
 fi
 
 echo display molluscan files
