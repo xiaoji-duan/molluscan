@@ -12,7 +12,7 @@ fi
 
 echo $UPDATED_FLAG
 
-if [ "${UPDATED_FLAG}" = "not updated" ]; then
+if [ "${UPDATED_FLAG}" = "notupdated" ]; then
   cd app
   pwd
 
