@@ -2,10 +2,10 @@
 
 cd app
 
-echo `display current workfolder`
+echo display current workfolder
 pwd
 
-echo `display environment params`
+echo display environment params
 env
 
 cordova platform remove android
