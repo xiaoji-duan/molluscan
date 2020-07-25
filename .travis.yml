@@ -56,6 +56,7 @@ matrix:
     cache:
       npm: false
 before_install:
+  - export PATH=$HOME/.yarn/bin:$PATH
   - if [[ "$TRAVIS_JOB_NAME" == "build" ]]; then nvm install 11 ; fi
 install:
   - if [[ "$TRAVIS_JOB_NAME" == "generate" ]]; then sh $TRAVIS_BUILD_DIR/.travis/generate-install.sh ; fi
