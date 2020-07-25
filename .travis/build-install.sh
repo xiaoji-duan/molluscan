@@ -1,7 +1,7 @@
 #!/bin/bash -v
 
 gem install fir-cli
-yarn global add @ionic/cli phonegap plugman cordova
+yarn global add @ionic/cli phonegap plugman @capacitor/core @capacitor/cli
 
 mkdir -p $ANDROID_HOME/licenses
 echo -e "d56f5187479451eabf01fb78af6dfcb131a6481e" >> $ANDROID_HOME/licenses/android-sdk-license

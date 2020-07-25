@@ -14,4 +14,4 @@ npx cap add android
 npm install -g increase-memory-limit
 increase-memory-limit
 
-ionic cordova build android --no-confirm=yes --verbose --stacktrace
+ionic build android --no-confirm=yes --verbose --stacktrace
