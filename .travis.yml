@@ -26,10 +26,17 @@ matrix:
   - os: linux
     sudo: true
     name: build
-    language: node_js
+    language: android
     dist: xenial
-    node_js:
-      - 11
+    android:
+      components:
+      - platform-tools
+      - tools
+      - build-tools-26.0.2
+      - android-27
+      - extra-google-google_play_services
+      - extra-google-m2repository
+      - extra-android-m2repository
     addons:
       apt:
         update: true
@@ -41,8 +48,14 @@ matrix:
         packages:
           - yarn
           - sshpass
+    licenses:
+      - android-sdk-preview-license-.+
+      - android-sdk-license-.+
+      - google-gdk-license-.+
     cache:
       npm: false
+before_install:
+  - if [[ "$TRAVIS_JOB_NAME" == "build" ]]; then nvm install 11 ; fi
 install:
   - if [[ "$TRAVIS_JOB_NAME" == "generate" ]]; then sh $TRAVIS_BUILD_DIR/.travis/generate-install.sh ; fi
   - if [[ "$TRAVIS_JOB_NAME" == "build" ]]; then sh $TRAVIS_BUILD_DIR/.travis/build-install.sh ; fi
