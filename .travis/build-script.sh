@@ -8,7 +8,6 @@ pwd
 #echo display environment params
 #env
 
-npx cap remove android
 npx cap add android
 
 npm install -g increase-memory-limit
