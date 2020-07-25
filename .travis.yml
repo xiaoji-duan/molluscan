@@ -47,6 +47,7 @@ matrix:
           key_url: https://dl.google.com/linux/linux_signing_key.pub
         packages:
           - yarn
+          - tree
           - gradle
           - sshpass
     licenses:
