@@ -14,4 +14,4 @@ cordova platform add android
 npm install -g increase-memory-limit
 increase-memory-limit
 
-ionic cordova build android --verbose --stacktrace
+ionic cordova build android --no-confirm=yes --verbose --stacktrace
